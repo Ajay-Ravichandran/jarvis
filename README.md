@@ -1,2 +1,2 @@
 # jarvis
-Yet another java playground...
+java playground
