@@ -10,15 +10,23 @@
     <!-- Define your beans here -->
 
     <!-- Define dependency -->
-    <bean id="myFortune"
+    <bean id="myFortuneService"
           class="com.aj.springdemo.HappyFortuneService">
     </bean>
 
     <bean id="myCoach" class="com.aj.springdemo.TrackCoach"> <!-- change with the classes -->
         <!-- set up constructor injection -->
-        <constructor-arg ref="myFortune"/> <!-- id of the bean you want to inject -->
+        <constructor-arg ref="myFortuneService"/> <!-- id of the bean you want to inject -->
     </bean>
 
+    <bean id="myCricketCoach" class="com.aj.springdemo.CricketCoach">
+        <!-- set up setter injection -->
+        <property name="fortuneService" ref="myFortuneService"/>
+
+        <!-- inject literal values -->
+        <property name="emailAddress" value="sample@gmail.com"/>
+        <property name="team" value="csk"/>
+    </bean>
 
 </beans>
 
