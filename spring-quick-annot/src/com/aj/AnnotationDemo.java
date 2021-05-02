@@ -32,6 +32,10 @@ public class AnnotationDemo {
         - create setter methods for injection
         - configure @Autowired annotation
 
+        Field injection
+        Injecting dependencies by setting field values on class - even for private fields
+        - configure the dependency injection with autowired ( no need for setter methods - using reflections)
+
          */
     }
 }
