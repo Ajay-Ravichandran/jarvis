@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component //spring will automatically register this bean with the container
-public class TennisCoach implements Coach{
+public class TennisCoach implements Coach {
 
     private FortuneService fortuneService;
 
@@ -15,7 +15,7 @@ public class TennisCoach implements Coach{
 
     //define default constructor
 
-    public TennisCoach(){
+    public TennisCoach() {
         System.out.println("Inside default constructor");
     }
 
