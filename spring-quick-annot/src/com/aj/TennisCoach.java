@@ -1,11 +1,14 @@
 package com.aj;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component //spring will automatically register this bean with the container
 public class TennisCoach implements Coach {
 
+    @Autowired // No need for setter methods - field injection happens through reflections API
+    @Qualifier("randomFortuneService") //since we have multiple implementations
     private FortuneService fortuneService;
 
 //    @Autowired //spring will scan for a component that implements the fortune service interface
@@ -20,11 +23,11 @@ public class TennisCoach implements Coach {
     }
 
     //creating setter method
-    @Autowired
-    public void sampleMethod(FortuneService fortuneService) {
-        System.out.println("Inside Setter");
-        this.fortuneService = fortuneService;
-    }
+//    @Autowired
+//    public void sampleMethod(FortuneService fortuneService) {
+//        System.out.println("Inside Setter");
+//        this.fortuneService = fortuneService;
+//    }
 
     @Override
     public String getDailyWorkout() {
