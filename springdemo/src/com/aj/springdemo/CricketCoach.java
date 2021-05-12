@@ -6,6 +6,7 @@ public class CricketCoach implements Coach{
 
     //adding new fields
     private String emailAddress;
+    
     private String team;
 
     public String getEmailAddress() {
